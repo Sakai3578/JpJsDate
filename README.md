@@ -1,12 +1,19 @@
 # これは何？
-HTML上で、jQueryで①直接入力した数値を日付や月に変換するフォーム、②左記日付フィールドに時刻選択モーダル付きの日次入力フォーム、の２点を実装するJavaScriptコード。
+
+jQueryを利用して、HTML上で
+
+- 直接入力した数値を日付や月に変換するフォーム、
+- 上記日付フィールドに時刻選択モーダルを追加した日時入力フォーム
+
+の２点を実装するJavaScriptコード。
+例えば業務用システムなど同じ人が繰り返し使用するようなWebアプリにおいて、HTML標準の日付入力フォーム（Dateピッカー形式）では不便な場合に便利です。
 
 # 使い方
 
-HTML上のinputタグに対して、以下のクラスを付与します。
-- JpJsDate-datetime（時刻選択モーダル付き日時入力フィールド）
-- JpJsDate-date（日付入力フィールド）
-- JpJsDate-month（月入力フィールド）
+JpJsDate.jsをインポートした上、HTML上の対象inputタグに対して以下のclassを付与します。
+- class="JpJsDate-datetime"（時刻選択モーダル付き日時入力フィールド）
+- class="JpJsDate-date"（日付入力フィールド）
+- class="JpJsDate-month"（月入力フィールド）
 
 尚、JpJsDate-datetimeのみ、モーダルからの値受け渡し処理で使用するためid属性が必須です。
 
