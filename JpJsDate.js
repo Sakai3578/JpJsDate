@@ -59,8 +59,9 @@ $(function() {
         $('[name=JpJsDate-hour]').val(String(currentHour));
         $('[name=JpJsDate-minute]').val(currentMinute);
     });
+    //日時入力フィールドでtabまたはEsc入力でモーダル除去
     $(document).on('keydown', '.JpJsDate-datetime', function(e) {
-        if (e.keyCode === 9) {
+        if (e.keyCode === 9 || e.keyCode === 27) {
             //モーダル除去
             $(`.JpJsDate-time-input-modal`).remove();
         }
@@ -214,8 +215,13 @@ function to_date_text(str) {
             year = new Date().getFullYear();
             month = parseFloat(str.substr(0, 2));
             day = parseFloat(str.substr(2, 2));
+        } else if (str.length === 6) {
+            //6文字の場合、yyMMdd形式を想定
+            year = 2000 + parseFloat(str.substr(0, 2));
+            month = parseFloat(str.substr(2, 2));
+            day = parseFloat(str.substr(4, 2));
         } else if (str.length === 8) {
-            //8文字の場合
+            //8文字の場合、yyyyMMdd形式を想定
             year = parseFloat(str.substr(0, 4));
             month = parseFloat(str.substr(4, 2));
             day = parseFloat(str.substr(6, 2));
