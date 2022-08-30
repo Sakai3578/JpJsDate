@@ -15,7 +15,7 @@ jQueryを利用して、HTML上で
 
 # 使い方 How To Use
 
-JpJsDate.jsをインポートした上、HTML上の対象inputタグ（type="text"）に対して以下のclassを付与します。
+jQueryとJpJsDate.jsをインポートした上、HTML上の対象inputタグ（type="text"）に対して以下のclassを付与します。
 - class="JpJsDate-datetime"（時刻選択モーダル付き日時入力フィールド）
 - class="JpJsDate-date"（日付入力フィールド）
 - class="JpJsDate-month"（月入力フィールド）
