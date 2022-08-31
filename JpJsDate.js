@@ -5,6 +5,10 @@
  ライセンスに関しては、リポジトリ内のLICENSEファイルを参照してください。
 _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 */
+
+//時間入力モーダルの上方向マージン調整（inputフィールドのpadding値によっては調整が必要）
+const JpJsDate_TIME_MODAL_TOP_MARGIN = 18;
+
 $(function() {
     //日時フォーマット（JpJsDate-datetimeクラスを付与したinputフィールド）
     $(document).on('focus', '.JpJsDate-datetime', function() {
@@ -33,7 +37,7 @@ $(function() {
                         color: #fff;
                         border-radius: 1px;
                         padding: 5px;
-                        top: ${position["top"] + 18}px;
+                        top: ${position["top"] + JpJsDate_TIME_MODAL_TOP_MARGIN}px;
                         left: ${position["left"]}px;">
                 <div style="display: flex">
                     <div>
@@ -134,6 +138,7 @@ $(function() {
 });
 //時刻モーダル選択後処理
 function JpJsDate_time_submit(inputFieldId, hour, minute) {
+    inputFieldId = inputFieldId.replaceAll('.', '\\.');
     let currentValue = $(`#${inputFieldId}`).val();
     let hourAsNum = Number(hour);
     let minuteAsNum = Number(minute);
